@@ -11,7 +11,7 @@ python gridworld_learn.py
 which learns a pure gridworld environment with SARSA algorithm.
 
 ### What is going on?
-Agent starts on the green cell and should move to the blue field. Each movement gives a reward of -1 and so the task is to find the shortest path. There are four environment variants:
+Agent starts on the green cell and should move to the blue field. Each movement gives a reward of -1 and so the task is to find the shortest path. There are four environments implemented:
 * **pure gridworld**
 
 The agent can move up/down/left and right. Besides the initial and final cells, world is featureless.
@@ -44,7 +44,7 @@ There are three algorithms implemented
 * Q-Learning
 
 ## Examples
-In the **/examples** directory working examples are provided.
+In the **examples** directory working examples are provided.
 
 - *SARSA_lambda*
 
