@@ -49,7 +49,7 @@ There are three algorithms implemented
 ## Examples
 In the **examples** directory working examples are provided.
 
-1) *SARSAepsilon*
+- **SARSAepsilon**
 
 Explore the SARSA algorithm as a function of the epsilon parameter which measures how exploratory the algorithm is. To run:
 ```
@@ -58,7 +58,7 @@ Explore the SARSA algorithm as a function of the epsilon parameter which measure
 <p align="center">
 <img src="imgs/sarsaepsilon.png" alt="drawing" width="500"/>
 </p>
-2) *Qepsilon*
+- **Qepsilon**
 
 Explore the Q-learning algorithm as a function of the epsilon parameter which measures how exploratory the algorithm is. To run:
 ```
@@ -67,7 +67,7 @@ Explore the Q-learning algorithm as a function of the epsilon parameter which me
 <p align="center">
 <img src="imgs/qepsilon.png" alt="drawing" width="500"/>
 </p>
-3) *SARSAlambda*
+- **SARSAlambda**
 
 Explore the SARSA(LAMBDA) algorithm as a function of the lambda parameter which measures how much into the future our algorithm looks. To run:
 ```
@@ -76,7 +76,7 @@ Explore the SARSA(LAMBDA) algorithm as a function of the lambda parameter which 
 <p align="center">
 <img src="imgs/sarsalambda.png" alt="drawing" width="500"/>
 </p>
-4) *comparison*
+- **comparison**
 
 Compare SARSA, SARSA(LAMBDA) and Q-learn algorithms. To run:
 ```
