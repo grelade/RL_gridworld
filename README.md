@@ -39,7 +39,7 @@ python gridworld_learn.py --help
 ```
 
 ## Creating own environments
-[env data file and its parsed version]("imgs/env-img.png")
+![env datafile and its graphical representation]("imgs/env-img.png" env datafile and graphical representation)
 There is an easy way of generating own environments through plain text files found in [envs] dir.
 
 Apart from mandatory blocks:
