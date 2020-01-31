@@ -1,17 +1,19 @@
-# RL_gridworld
-User friendly code to see Reinforcement Learning algorithms at work in a set of gridworld environments.
-Gridworld environments are a subset of elementary yet nontrivial playground environments to test RL ideas.
-Implemented gridworlds are based on the Example 6.5 and Exercise 6.6 from the book "Reinforcement Learning:an introduction" by Sutton and Barto.
+# RL_gridworlds
+User friendly code to track Reinforcement Learning algorithms at work in a set of simple gridworld environments. Has a simple interpreter for creating own environments via plain text. Contains several playgrounds based on the Example 6.5 and Exercise 6.6 from the book "Reinforcement Learning:an introduction" by Sutton and Barto. Implemented variants of SARSA and Q-learning algorithms.
 
 ## How to start?
-To start a simple learning just run
+To start an agent learning an environment just run
 ```
-python gridworld_learn.py
+python RL_gridworlds.py
 ```
-which learns a pure gridworld environment with SARSA algorithm.
+which runs a SARSA algorithm on a [envs/simple.txt] environment.
 
 ### What is going on?
-Agent starts on the green cell and should move to the blue field. Each movement gives a reward of -1 and so the task is to find the shortest path. There are four environments implemented:
+Agent starts on the green cell and should move to the blue field. Each movement gives a reward of -1 and so the task is to find the shortest path.
+
+
+
+There are four environments implemented:
 * **pure gridworld**
 
 The agent can move up/down/left and right. Besides the initial and final cells, world is featureless.
@@ -35,6 +37,21 @@ All available options are found through
 ```
 python gridworld_learn.py --help
 ```
+
+## Creating own environments
+[env data file and its parsed version]("imgs/env-img.png")
+There is an easy way of generating own environments through plain text files found in [envs] dir.
+
+Apart from mandatory blocks:
+- 'S' the start block (reward -1; green)
+- 'E' the finish or end block (reward 10; blue)
+- '.' plain block (reward -1; white color)
+
+There are additional blocks available:
+- 'V' weak south wind, moves one tile (reward -1; lightblue)
+- 'W' strong south wind, moves two tiles (reward -1; darkblue)
+- '#' wall, cannot explore (reward -1; black)
+- '|' cliff, moves back to S (reward -100; gray)
 
 ## Algorithms
 
