@@ -9,49 +9,32 @@ python RL_gridworlds.py
 which runs a SARSA algorithm on a [envs/simple.txt] environment.
 
 ### What is going on?
-Agent starts on the green cell and should move to the blue field. Each movement gives a reward of -1 and so the task is to find the shortest path.
+Agent starts on the green cell and has to find a way to the blue field where he receives a reward. Each movement gives a penalty of -1 and so agent is incentivized to find the shortest path. Agent can either move in four NSEW (basic) or eight (King's) directions. 
 
-
-
-There are four environments implemented:
-* **pure gridworld**
-
-The agent can move up/down/left and right. Besides the initial and final cells, world is featureless.
-
-* **King's moves gridworld**
-
-The agent can also move on the diagonals, world is featureless.
-
-* **Windy gridworld**
-
-Agent can move in a classic manner however the world gains a windy strip between initial and final cells. This strip is colored in either light or dark-gray denoting weak and strong wind respectively. Upon stepping on a windy tile, on top of agent's normal motion, the gust translates him either one or two tiles up depending on the strength of the wind.  
-
-* **Windy King's moves gridworld**
-
-Combination of two previous cases i.e. agent in a Windy gridworld has King's moves.
-
-Four arrows located at the center of each cell depict the possible actions with their probabilities encoded in their sizes. An actual trajectory chosen by the agent is shown by a thick black line and it is drawn only when it is complete or reaches the final cell.
+Four (or eight) arrows located at the center of each cell depict the possible actions with their probabilities encoded in arrows' sizes. An actual trajectory chosen by the agent is shown by a thick red line; the most recent track is redrawn each time after 40 iterations and fully drawn when reaching the final tile.
 
 ## Options
 All available options are found through
 ```
-python gridworld_learn.py --help
+python RL_gridworlds.py --help
 ```
 
-## Creating own environments
-![env datafile and its graphical representation]("imgs/env-img.png" env datafile and graphical representation)
-There is an easy way of generating own environments through plain text files found in [envs] dir.
+## Own environments
+<p align="center">
+<img src="imgs/env-img.png" alt="drawing" width="300"/>
+</p>
+Since environment data is stored in plain text files, there is an easy way of generating own playgrounds by putting them in **envs** dir and running the script with [-E filename]. Available blocks are listed below:
 
 Apart from mandatory blocks:
-- 'S' the start block (reward -1; green)
-- 'E' the finish or end block (reward 10; blue)
-- '.' plain block (reward -1; white color)
+- **S** the start block (reward -1; green)
+- **E** the finish or end block (reward 10; blue)
+- **.** plain block (reward -1; white color)
 
-There are additional blocks available:
-- 'V' weak south wind, moves one tile (reward -1; lightblue)
-- 'W' strong south wind, moves two tiles (reward -1; darkblue)
-- '#' wall, cannot explore (reward -1; black)
-- '|' cliff, moves back to S (reward -100; gray)
+There are additional tiles available:
+- **V** weak south wind, moves one tile (reward -1; lightblue)
+- **W** strong south wind, moves two tiles (reward -1; darkblue)
+- **#** wall, cannot explore (reward -1; black)
+- **|** cliff, moves back to S (reward -100; gray)
 
 ## Algorithms
 
