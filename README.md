@@ -6,13 +6,13 @@ To start an agent learning an environment just run
 ```
 python RL_gridworlds.py
 ```
-which runs a SARSA algorithm on a [envs/simple.txt] environment.
+which runs a SARSA algorithm on a *[envs/simple.txt]* environment.
 
 ### What is going on?
 <p align="center">
 <img src="imgs/run.gif" alt="drawing" width="500"/>
 </p>
-Agent starts on the green cell and has to find a way to the blue field where he receives a reward. Each movement gives a penalty of -1 and so agent is incentivized to find the shortest path. Agent can either move in four NSEW (basic) or eight (King's) directions. 
+Agent starts on the green cell and has to find a way to the blue field where he receives a reward. Each movement gives a penalty of -1 and so agent is incentivized to find the shortest path. Agent can either move in four NSEW (basic) or eight (King's) directions.
 
 Four (or eight) arrows located at the center of each cell depict the possible actions with their probabilities encoded in arrows' sizes. An actual trajectory chosen by the agent is shown by a thick red line; the most recent track is redrawn each time after 40 iterations and fully drawn when reaching the final tile.
 

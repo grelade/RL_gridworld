@@ -53,7 +53,7 @@ plt.plot(xA3,yA3,label="Q-LEARN")
 # plt.plot(xA5,yA5,label="SARSA lambda=0.7")
 # plt.plot(xA6,yA6,label="SARSA lambda=0.8")
 # plt.plot(xA7,yA7,label="SARSA lambda=0.9")
-
+plt.title('environment windy.txt')
 plt.ylabel('mean trajectory length')
 plt.legend()
 
@@ -79,6 +79,7 @@ plt.plot(xA1,yA1,label="SARSA(lambda=0.9)")
 plt.plot(xA2,yA2,label="SARSA")
 plt.plot(xA3,yA3,label="Q-LEARN")
 plt.ylabel('mean reward')
+plt.title('environment windy.txt')
 plt.legend()
 
 # xB1=list(efficacy1.keys())

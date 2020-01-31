@@ -5,7 +5,7 @@ import tkinter
 import threading
 import argparse
 import conf
-
+import os,sys
 import time
 from envs import env
 
@@ -114,7 +114,7 @@ class compute(threading.Thread):
         totaltime = 0 # total simulation time
 
         # draw init policy
-        self.renderer.drawpolicy(policy)
+        if not self.renderer == None: self.renderer.drawpolicy(policy)
 
         for n in range(0,noepisodes+1):
             episodetime = 0
@@ -157,7 +157,7 @@ class compute(threading.Thread):
 
                 S,A = Sp,Ap
 
-                if episodetime % 40 == 0:
+                if episodetime % 40 == 0 and not self.renderer == None:
                     self.renderer.clearCanvas()
                     self.renderer.drawgrid()
                     self.renderer.drawtrajectory(Slist[-40:])
@@ -286,8 +286,8 @@ if __name__ == "__main__":
     parser.add_argument('-q','--initq',type=float,default=conf.defaultinitq,help='set the initial Q-value')
 
     args = parser.parse_args()
-
-    e = env('envs/'+args.envtype)
+    print(os.path.join(sys.path[0],'envs',args.envtype))
+    e = env(os.path.join(sys.path[0],'envs',args.envtype))
 
     #print(e.xsize,e.ysize)
     #environment = {'0':env}[args.envtype]

@@ -29,7 +29,7 @@ class env:
             i+=1
 
         self.findstartend()
-        print(self.start,self.end)
+        #print(self.start,self.end)
 
     def findstartend(self):
         x,y=0,0
