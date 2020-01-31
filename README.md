@@ -9,6 +9,9 @@ python RL_gridworlds.py
 which runs a SARSA algorithm on a [envs/simple.txt] environment.
 
 ### What is going on?
+<p align="center">
+<img src="imgs/run.gif" alt="drawing" width="500"/>
+</p>
 Agent starts on the green cell and has to find a way to the blue field where he receives a reward. Each movement gives a penalty of -1 and so agent is incentivized to find the shortest path. Agent can either move in four NSEW (basic) or eight (King's) directions. 
 
 Four (or eight) arrows located at the center of each cell depict the possible actions with their probabilities encoded in arrows' sizes. An actual trajectory chosen by the agent is shown by a thick red line; the most recent track is redrawn each time after 40 iterations and fully drawn when reaching the final tile.
@@ -26,15 +29,15 @@ python RL_gridworlds.py --help
 Since environment data is stored in plain text files, there is an easy way of generating own playgrounds by putting them in **envs** dir and running the script with [-E filename]. Available blocks are listed below:
 
 Apart from mandatory blocks:
-- **S** the start block (reward -1; green)
-- **E** the finish or end block (reward 10; blue)
-- **.** plain block (reward -1; white color)
+- [**S**] the start block (reward -1; green)
+- [**E**] the finish or end block (reward 10; blue)
+- [**.**] plain block (reward -1; white color)
 
 There are additional tiles available:
-- **V** weak south wind, moves one tile (reward -1; lightblue)
-- **W** strong south wind, moves two tiles (reward -1; darkblue)
-- **#** wall, cannot explore (reward -1; black)
-- **|** cliff, moves back to S (reward -100; gray)
+- [**V**] weak south wind, moves one tile (reward -1; lightblue)
+- [**W**] strong south wind, moves two tiles (reward -1; darkblue)
+- [**#**] wall, cannot explore (reward -1; black)
+- [**|**] cliff, moves back to S (reward -100; gray)
 
 ## Algorithms
 
